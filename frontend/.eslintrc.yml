@@ -1,0 +1,39 @@
+plugins:
+  - 'jest'
+extends:
+  - 'eslint-config-airbnb'
+  - 'plugin:jest/recommended'
+parser: 'babel-eslint'
+env:
+  browser: true
+  node: true
+  amd: true
+
+'rules':
+  {
+    'react/jsx-filename-extension': [0],
+    'camelcase': off,
+    'react/prop-types': [2, { ignore: ['children'] }],
+    'react/jsx-props-no-spreading': off,
+  }
+
+'overrides':
+  - {
+      'files': ['*.test.js', 'serviceWorker.js'],
+      'rules': { 'jest/valid-expect': 0, 'no-unused-expressions': 0 },
+    }
+  - { 'files': ['*.js'], 'rules': { 'react/jsx-props-no-spreading': off } }
+  - {
+      'files': ['serviceWorker.js'],
+      'excludedFiles': '*.test.js',
+      'rules':
+        {
+          'quotes': ['error', 'single'],
+          'operator-linebreak': off,
+          'comma-dangle': off,
+          'no-use-before-define': off,
+          'no-console': off,
+          'arrow-parens': off,
+          'no-param-reassign': off,
+        },
+    }

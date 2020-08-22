@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  api:
+    build: .
+    volumes:
+      - .:/code/api
+    ports:
+      - 9000:9000
+
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/code/frontend
+      - /code/frontend/node_modules/
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    depends_on:
+      - api
