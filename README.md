@@ -2,7 +2,7 @@ This document assume that you are developing on `Mac OSX`.
 
 # Local Development Installation
 
-### Django
+### Backend
 
 ```shell script
 pip install -r requirements.text
@@ -10,7 +10,7 @@ python manage.py migrate
 python manage.py runserver 9000
 ```
 
-## Frontend Installation
+## Frontend 
 
 ```shell script
 cd frontend
